@@ -6,7 +6,7 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:49:13 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/22 17:17:50 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/23 15:12:50 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,16 @@ class ClassName
 	std::string	getName(void) const;
 	std::string	getMail(void) const;
 	int			getNbr(void) const;
+	
+	int			getGiftTo(void) const;
+	void		setGiftTo(int giftTo);
 
 	private :
 
 	std::string	_name;
 	std::string	_mail;
 	int			_nbr;
+	int			_giftTo;
 };
 
 #endif

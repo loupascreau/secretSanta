@@ -6,18 +6,18 @@
 /*   By: lpascrea <lpascrea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:50:12 by lpascrea          #+#    #+#             */
-/*   Updated: 2021/12/22 17:19:07 by lpascrea         ###   ########.fr       */
+/*   Updated: 2021/12/23 15:12:50 by lpascrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClassName.hpp"
 
-ClassName::ClassName()
+ClassName::ClassName() : _name(""), _mail(""), _nbr(0), _giftTo(-1)
 {
 	std::cout << "Default Constructor ClassName called" << std::endl;
 }
 
-ClassName::ClassName(std::string name, std::string mail, int nbr) : _name(name), _mail(mail), _nbr(nbr)
+ClassName::ClassName(std::string name, std::string mail, int nbr) : _name(name), _mail(mail), _nbr(nbr), _giftTo(-1)
 {
 	std::cout << GREEN << "[ Player " << this->_nbr << " ] " << WHITE << std::endl;;
 	std::cout << "Name : " << this->_name << std::endl;
@@ -52,6 +52,16 @@ std::string	ClassName::getMail(void) const
 int			ClassName::getNbr(void) const
 {
 	return this->_nbr;
+}
+
+int			ClassName::getGiftTo(void) const
+{
+	return this->_giftTo;
+}
+
+void		ClassName::setGiftTo(int giftTo)
+{
+	this->_giftTo = giftTo;
 }
 
 ClassName::~ClassName()
