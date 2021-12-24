@@ -14,6 +14,7 @@
 # define CLASSNAME_HPP
 
 # include <iostream>
+# include <cstdlib>
 
 # define	MAGEN	"\033[0;35m"
 # define	WHITE	"\033[0m"

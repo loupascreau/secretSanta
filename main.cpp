@@ -53,7 +53,7 @@ int		main(void)
 		i++;
 	}
 
-	std::srand(std::time(NULL));
+	std::srand(time(NULL));
 	nbr_gift = 0;
 	while (nbr_gift < nbr_players)
 	{
