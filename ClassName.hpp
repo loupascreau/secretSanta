@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <time.h>
 
 # define	MAGEN	"\033[0;35m"
 # define	WHITE	"\033[0m"

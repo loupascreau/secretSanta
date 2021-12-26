@@ -65,11 +65,15 @@ int		main(void)
 				break ;
 			i++;
 		}
-		if (i == nbr_players && players[random]->getGiftTo() != nbr_gift && players[nbr_gift]->getNbr() != random)
+		if (i == nbr_players)
 		{
-			players[nbr_gift]->setGiftTo(random);
-			nbr_gift++;
+			if (players[nbr_gift]->getNbr() != random + 1 && players[random]->getGiftTo() != nbr_gift)
+			{
+				players[nbr_gift]->setGiftTo(random);
+				nbr_gift++;
+			}
 		}
+
 	}
 
 	i = 0;
