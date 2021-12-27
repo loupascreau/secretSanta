@@ -76,6 +76,36 @@ int		main(void)
 
 	}
 
+	std::ofstream	mailFile;
+	std::ofstream	contentFile;
+	std::string		fileName;
+	char			newFilename[1024];
+
+	i = 0;
+	while (i < nbr_players)
+	{
+		fileName = players[i]->getName() + "Mail";
+		fileName.copy(newFilename, fileName.size() + 1);
+		newFilename[fileName.size()] = '\0';
+		mailFile.open(newFilename);
+		if (mailFile.is_open())
+		{
+			fileName = players[i]->getName() + "Content";
+			fileName.copy(newFilename, fileName.size() + 1);
+			newFilename[fileName.size()] = '\0';
+			contentFile.open(newFilename);
+			if (contentFile.is_open())
+			{
+				contentFile << "Salut " << players[i]->getName() << " tu dois offrir ton cadeau a " << players[players[i]->getGiftTo()]->getName();
+				mailFile << players[i]->getMail();
+				contentFile.close();
+			}
+			mailFile.close();
+		}
+		i++;
+	}
+
+
 	i = 0;
 	while (i < nbr_players)
 	{
