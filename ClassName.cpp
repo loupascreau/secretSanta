@@ -66,5 +66,5 @@ void		ClassName::setGiftTo(int giftTo)
 
 ClassName::~ClassName()
 {
-	std::cout << "Destructor ClassName called" << std::endl;
+	// std::cout << "Destructor ClassName called" << std::endl;
 }

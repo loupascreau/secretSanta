@@ -39,6 +39,10 @@ int		main(void)
 	int			nbr_gift;
 
 	nbr_players = init();
+	if (nbr_players < 3) {
+		std::cout << "ERROR : you must be at least 3 players to play !" << std::endl;
+		return 0;
+	}
 	ClassName	*players[nbr_players];
 
 	i = 0;
@@ -96,7 +100,10 @@ int		main(void)
 			contentFile.open(newFilename);
 			if (contentFile.is_open())
 			{
-				contentFile << "Salut " << players[i]->getName() << " tu dois offrir ton cadeau a " << players[players[i]->getGiftTo()]->getName();
+				contentFile << "Salut " << players[i]->getName() << "," << std::endl;
+				contentFile << std::endl;
+				contentFile << "Tu dois offrir ton cadeau a " << players[players[i]->getGiftTo()]->getName() << " !" << std::endl;
+				contentFile << std::endl;
 				mailFile << players[i]->getMail();
 				contentFile.close();
 			}
@@ -106,12 +113,31 @@ int		main(void)
 	}
 
 
-	i = 0;
-	while (i < nbr_players)
+	std::ofstream	allEmailsFile;
+	std::ofstream	allNamesFile;
+
+	fileName = "allEmails";
+	fileName.copy(newFilename, fileName.size() + 1);
+	newFilename[fileName.size()] = '\0';
+	allEmailsFile.open(newFilename);
+	if (allEmailsFile.is_open())
 	{
-		std::cout << "players " << i << " offer to " << players[i]->getGiftTo() << std::endl;
-		delete players[i];
-		i++;
+		i = 0;
+		fileName = "allNames";
+		fileName.copy(newFilename, fileName.size() + 1);
+		newFilename[fileName.size()] = '\0';
+		allNamesFile.open(newFilename);
+		if (allNamesFile.is_open()) {
+			while (i < nbr_players)
+			{
+				allEmailsFile << players[i]->getMail() << std::endl;
+				allNamesFile << players[i]->getName() << std::endl;
+				delete players[i];
+				i++;
+			}
+			allNamesFile.close();
+		}
+		allEmailsFile.close();
 	}
 	return 0;
 }
