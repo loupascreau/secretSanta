@@ -21,6 +21,9 @@ You will need the ``sendmail`` command working with your email (The same at the 
 
 ## 🖼️ some pictures
 
+Execution exemple :<br>
+<img src="img/execution_exemple.png" width="750px" />
+
 Email received exemple :<br>
 <img src="img/email_result.jpg" width="350px" />
 
