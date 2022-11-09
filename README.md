@@ -6,21 +6,13 @@ Welcome to my little secret Santa home made.
 
 After cloning the repo, move into it. <br>
 First use ``make`` <br>
-Then execute ``./secretSanta`` <br>
+Then execute ``./script.sh`` <br>
 Follow the prompt indications. <br>
 <br>
-It will create 2 files per players, one with the player's email and one with the content to send to this player. <br>
-<br>
-Finally use ``script.sh`` with each of the 2 files of each player <br>
 
-🦄 Exemple : <br>
-```sh
-[ Player 1 ] 
-Name : lou
-Mail : loupascreau@gmail.com
-```
-Will create ``louMail`` and ``louContent``, so execute ``./script.sh louMail louContent`` <br>
-The script is going to send the ``louContent`` to ``louMail``, the ``louContent`` contains the name of the player to whom Lou must offer his gift. <br>
+🦄 The script will call the ``secretSanta`` executable needed to get all the participants with their emails.<br>
+And finally it will send all emails !<br>
+<br>
 
 ## 😊 prerequisite
 
