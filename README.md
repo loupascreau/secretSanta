@@ -5,6 +5,7 @@ Welcome to my little secret Santa home made.
 ## 👀 How to use
 
 After cloning the repo, move into it. <br>
+change the ``script.sh`` line 33 : ``From : email@email.com`` with your sender email.<br>
 First use ``make`` <br>
 Then execute ``./script.sh`` <br>
 Follow the prompt indications. <br>
@@ -16,7 +17,7 @@ And finally it will send all emails !<br>
 
 ## 😊 prerequisite
 
-You will need the ``sendmail`` command.
+You will need the ``sendmail`` command working with your email (The same at the ``From :`` line in ``script.sh``).
 
 ## 🔧 Build with
 
