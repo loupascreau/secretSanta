@@ -19,6 +19,11 @@ And finally it will send all emails !<br>
 
 You will need the ``sendmail`` command working with your email (The same at the ``From :`` line in ``script.sh``).
 
+## 🖼️ some pictures
+
+Email received exemple :<br>
+<img src="img/email_result.jpg" width="350px" />
+
 ## 🔧 Build with
 
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
