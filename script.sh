@@ -30,7 +30,7 @@ fileName=$2
 fileName+="Content"
 sendmail -it << EOF
 To: $1
-From : loupascreau@gmail.com
+From : email@email.com
 Subject: Secret Santa by Lou
 
 $(cat ${fileName})
