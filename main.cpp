@@ -59,6 +59,7 @@ int		main(void)
 
 	std::srand(time(NULL));
 	nbr_gift = 0;
+	int	alreadyAdded[nbr_players];
 	while (nbr_gift < nbr_players)
 	{
 		i = 0;
@@ -74,10 +75,55 @@ int		main(void)
 			if (players[nbr_gift]->getNbr() != random + 1 && players[random]->getGiftTo() != nbr_gift)
 			{
 				players[nbr_gift]->setGiftTo(random);
+				alreadyAdded[nbr_gift] = random;
+				// std::cout << "player[" << nbr_gift << "]" << "random added = " << random << std::endl;
 				nbr_gift++;
 			}
 		}
 
+		int 	k = 0;
+		bool	found = true;
+		while (nbr_gift == nbr_players - 1) {
+			if (found == false) {
+				// std::cout << "last = " << k - 1 << std::endl;
+				players[nbr_gift]->setGiftTo(k - 1);
+				// std::cout << "player[" << nbr_gift << "]" << "random added = " << k - 1 << std::endl;
+				nbr_gift++;
+				break ;
+			}
+			found = false;
+			for (int j = 0; j < nbr_gift; j++) {
+				if (alreadyAdded[j] == k) {
+					found = true;
+					break ;
+				}
+			}
+			k++;
+		}
+
+		int	countLoop = 1;
+		int	tmp = 0;
+		if (nbr_gift == nbr_players) {
+			std::cout << "verif loop.." << std::endl;
+			// std::cout << "player[" << tmp << "] = " << players[tmp]->getGiftTo() << std::endl;
+			while (countLoop < nbr_players) {
+				tmp = players[tmp]->getGiftTo();
+				// std::cout << "player[" << tmp << "] = " << players[tmp]->getGiftTo() << std::endl;
+				countLoop++;
+				if (players[tmp]->getGiftTo() == 0) {
+					break ;
+				}
+			}
+			if (countLoop != nbr_players) {
+				std::cout << "reset loop" << std::endl;
+				nbr_gift = 0;
+				for (int j = 0; j < nbr_players; j++) {
+					players[j]->setGiftTo(-1);
+				}
+			} else {
+				std::cout << "loop ok !" << std::endl;
+			}
+		}
 	}
 
 	std::ofstream	mailFile;
@@ -111,7 +157,6 @@ int		main(void)
 		}
 		i++;
 	}
-
 
 	std::ofstream	allEmailsFile;
 	std::ofstream	allNamesFile;
