@@ -30,7 +30,7 @@ fileName=$2
 fileName+="Content"
 sendmail -it << EOF
 To: $1
-From : email@email.com
+From : loupascreau@gmail.com
 Subject: Secret Santa by Lou
 
 $(cat ${fileName})
@@ -61,6 +61,7 @@ for name in ${allNames}; do
     echo "cleaning ${name} files.."
     fileToRm=$name
     fileToRm+="Content"
+    echo "$(cat $fileToRm)" >> backup_nouvel_an_girls
     rm -rf ${fileToRm}
     fileToRm=$name
     fileToRm+="Mail"
